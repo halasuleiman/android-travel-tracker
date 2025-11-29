@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/edit_trip_background"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✏ Edit Trip"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#2D4E57"
+            android:gravity="center"
+            android:layout_marginBottom="28dp"
+            android:background="@android:color/transparent"
+            android:padding="20dp" />
+
+        <!-- Trip Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundColor="#B3FFFFFF"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:hintTextColor="#2D4E57"
+            app:boxStrokeColor="#802D4E57">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTripName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="🚀 Trip Name"
+                android:textColor="#2D4E57"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Destination -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundColor="#B3FFFFFF"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:hintTextColor="#2D4E57"
+            app:boxStrokeColor="#802D4E57">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDestination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="📍 Destination"
+                android:textColor="#2D4E57"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Dates Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <!-- Start Date -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/card_background"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📅 Start Date"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D4E57"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tvStartDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select date"
+                    android:padding="14dp"
+                    android:background="#B3E8F5E9"
+                    android:gravity="center"
+                    android:textColor="#2D4E57"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- End Date -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/card_background"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📅 End Date"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D4E57"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tvEndDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select date"
+                    android:padding="14dp"
+                    android:background="#B3E8F5E9"
+                    android:gravity="center"
+                    android:textColor="#2D4E57"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Number of People & Budget Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <!-- Number of People -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/card_background"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="👥 People"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D4E57"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center" />
+
+                <NumberPicker
+                    android:id="@+id/npPeople"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent" />
+
+            </LinearLayout>
+
+            <!-- Budget -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/card_background"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💰 Budget"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D4E57"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBudget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="0.0"
+                    android:inputType="numberDecimal"
+                    android:padding="14dp"
+                    android:background="#B3E8F5E9"
+                    android:gravity="center"
+                    android:textColor="#2D4E57"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Currency & Priority Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <!-- Currency -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/card_background"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💵 Currency"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D4E57"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center" />
+
+                <Spinner
+                    android:id="@+id/spinnerCurrency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#B3E8F5E9"
+                    android:padding="12dp"
+                    android:popupBackground="#B3FFFFFF" />
+
+            </LinearLayout>
+
+            <!-- Priority -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/card_background"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🎯 Priority"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D4E57"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center" />
+
+                <Spinner
+                    android:id="@+id/spinnerPriority"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#B3E8F5E9"
+                    android:padding="12dp"
+                    android:popupBackground="#B3FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Emergency Number -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundColor="#B3FFFFFF"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:hintTextColor="#2D4E57"
+            app:boxStrokeColor="#802D4E57">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmergencyNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="🚑 Emergency Number"
+                android:inputType="phone"
+                android:textColor="#2D4E57"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Accommodation -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundColor="#B3FFFFFF"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:hintTextColor="#2D4E57"
+            app:boxStrokeColor="#802D4E57">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAccommodation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="🏨 Accommodation"
+                android:textColor="#2D4E57"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Trip Purpose -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:boxBackgroundColor="#B3FFFFFF"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:hintTextColor="#2D4E57"
+            app:boxStrokeColor="#802D4E57">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTripPurpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="🎯 Trip Purpose"
+                android:textColor="#2D4E57"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Available Documents Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📄 Available Documents"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2D4E57"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:background="@android:color/transparent"
+            android:padding="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/card_background"
+            android:padding="20dp">
+
+            <CheckBox
+                android:id="@+id/cbPassport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Passport"
+                android:textColor="#2D4E57"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:buttonTint="#2D4E57" />
+
+            <CheckBox
+                android:id="@+id/cbVisa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visa"
+                android:textColor="#2D4E57"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:buttonTint="#2D4E57" />
+
+            <CheckBox
+                android:id="@+id/cbLicense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Driver License"
+                android:textColor="#2D4E57"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:buttonTint="#2D4E57" />
+
+            <CheckBox
+                android:id="@+id/cbId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ID Card"
+                android:textColor="#2D4E57"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:buttonTint="#2D4E57" />
+
+            <CheckBox
+                android:id="@+id/cbTickets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Flight Tickets"
+                android:textColor="#2D4E57"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:buttonTint="#2D4E57" />
+
+        </LinearLayout>
+
+        <!-- Buttons - FIXED IDs (استخدم buttonUpdate و buttonCancel) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_container"
+            android:padding="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="❌ Cancel"
+                android:layout_marginEnd="12dp"
+                android:backgroundTint="#802D4E57"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonUpdate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="💾 Update"
+                android:layout_marginStart="12dp"
+                android:backgroundTint="#804CAF50"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
